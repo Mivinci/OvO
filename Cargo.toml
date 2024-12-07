@@ -1,0 +1,10 @@
+[package]
+name = "jsc"
+version = "0.1.0"
+description = "Rust bindings for the JavaScriptCore engine."
+authors = ["mivinci <mivinci@qq.com>"]
+license = "MIT"
+repository = "https://github.com/mivinci/jsc"
+edition = "2021"
+
+[dependencies]
