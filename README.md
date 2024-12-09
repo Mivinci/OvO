@@ -1,3 +1,3 @@
-# JSC
+# OvO
 
-Rust bindings for the JavaScriptCore engine.
+🦉 OvO JavaScript Runtime

@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/src/binding",
+        "${workspaceFolder}/WebKit/WebKitBuild/Debug/include",
+        "${workspaceFolder}/WebKit/WebKitBuild/Debug/usr/local/include"
+      ],
+      "defines": []
+    }
+  ],
+  "version": 4
+}

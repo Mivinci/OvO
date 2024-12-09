@@ -1,0 +1,5 @@
+if(CMAKE_BUILD_TYPE STREQUAL "Debug") 
+  set(BUILD_TYPE "Debug")
+else()
+  set(BUILD_TYPE "Release")
+endif()

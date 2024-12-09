@@ -1,0 +1,5 @@
+BaseOnStyle: Google
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
