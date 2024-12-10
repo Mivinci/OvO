@@ -8,5 +8,5 @@ list(APPEND CMAKE_MODULE_PATH
 include(SetupGlobal)
 include(SetupWebKit)
 
-include(BuildJSC)
+include(BuildJavaScriptCore)
 include(BuildOvO)

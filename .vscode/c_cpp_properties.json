@@ -5,8 +5,7 @@
       "includePath": [
         "${workspaceFolder}/**",
         "${workspaceFolder}/src/binding",
-        "${workspaceFolder}/WebKit/WebKitBuild/Debug/include",
-        "${workspaceFolder}/WebKit/WebKitBuild/Debug/usr/local/include"
+        "${workspaceFolder}/vendor/WebKit/include"
       ],
       "defines": []
     }
