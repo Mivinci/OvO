@@ -17,4 +17,11 @@ target_link_libraries(${ovo} PRIVATE
   ${WEBKIT_LIB_DIR}/libJavaScriptCore.a
 )
 
-add_dependencies(${ovo} ${jsc})
+set_target_properties(${ovo} PROPERTIES
+  C_STANDARD 99
+  C_STANDARD_REQUIRED ON
+  CXX_STANDARD 20
+  CXX_STANDARD_REQUIRED ON
+)
+
+# add_dependencies(${ovo} ${jsc})

@@ -24,6 +24,9 @@ if(APPLE)
     COMMAND ${CMAKE_COMMAND} -E copy_directory
       ${WEBKIT_LIB_DIR}/usr/local/include/wtf
       ${VENDOR_WEBKIT_DIR}/include/wtf
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+      ${WEBKIT_LIB_DIR}/usr/local/include/bmalloc
+      ${VENDOR_WEBKIT_DIR}/include/bmalloc
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
       ${WEBKIT_LIB_DIR}/libJavaScriptCore.a
       ${VENDOR_WEBKIT_DIR}/lib/
