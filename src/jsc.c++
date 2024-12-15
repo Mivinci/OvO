@@ -1,9 +1,8 @@
 #include "jsc.h"
 
-#include "JavaScriptCore/APICast.h"
+#include "JavaScriptCore/Completion.h"
 #include "JavaScriptCore/InitializeThreading.h"
-#include "JavaScriptCore/JSCJSValue.h"
-#include "JavaScriptCore/ThrowScope.h"
+#include "wtf/NakedPtr.h"
 
 void JSC__initialize(void) { return JSC::initialize(); }
 
@@ -23,7 +22,8 @@ JSC__JSValue JSC__evaluate(JSC__JSGlobalObject *global_object,
   NakedPtr<JSC::Exception> exception = nullptr;
   auto scope = DECLARE_THROW_SCOPE(global_object->vm());
   auto result =
-      JSC::evaluate(global_object, source_code, JSC::JSValue::decode(this_value), exception);
+      JSC::evaluate(global_object, source_code,
+      JSC::JSValue::decode(this_value), exception);
   if (exception.get()) {
     scope.throwException(global_object, exception.get());
     return JSC::JSValue::encode(JSC::jsUndefined());

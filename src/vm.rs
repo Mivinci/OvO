@@ -1,21 +1,23 @@
-// extern "C" {
-//   fn JSC__VM__create(heap_type: HeapType);
-// }
+extern "C" {
+  fn JSC__VM__create(heap_type: HeapType);
+}
 
-// #[repr(C)]
-// pub enum HeapType {
-//   Small,
-//   Large,
-// }
+pub struct VM {}
 
-// #[cfg(test)]
-// mod test {
-//   use super::*;
+#[repr(C)]
+pub enum HeapType {
+  Small,
+  Large,
+}
 
-//   #[test]
-//   fn test_initialize() {
-//     unsafe {
-//       JSC__VM__create(HeapType::Small);
-//     }
-//   }
-// }
+#[cfg(test)]
+mod test {
+  use super::*;
+
+  #[test]
+  fn test_initialize() {
+    unsafe {
+      JSC__VM__create(HeapType::Small);
+    }
+  }
+}

@@ -9,4 +9,4 @@ include(SetupGlobal)
 include(SetupWebKit)
 
 include(BuildJavaScriptCore)
-include(BuildOvO)
+include(BuildCXXBindings)

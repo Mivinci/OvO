@@ -1,5 +1,4 @@
 set(jsc "JavaScriptCore")
-
 set(BUILD_OPTIONS)
 
 if(DEBUG)
@@ -13,27 +12,13 @@ if(APPLE)
   add_custom_command(TARGET ${jsc} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory
       ${VENDOR_WEBKIT_DIR}/include/JavaScriptCore
-    COMMAND ${CMAKE_COMMAND} -E make_directory
-      ${VENDOR_WEBKIT_DIR}/lib
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-      ${WEBKIT_LIB_DIR}/JavaScriptCore.framework/Headers/*h
+      ${WEBKIT_BUILD_DIR}/JavaScriptCore.framework/Headers/*h
       ${VENDOR_WEBKIT_DIR}/include/JavaScriptCore/
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-      ${WEBKIT_LIB_DIR}/JavaScriptCore.framework/PrivateHeaders/*h
-      ${VENDOR_WEBKIT_DIR}/include/JavaScriptCore/
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-      ${WEBKIT_LIB_DIR}/usr/local/include/wtf
-      ${VENDOR_WEBKIT_DIR}/include/wtf
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-      ${WEBKIT_LIB_DIR}/usr/local/include/bmalloc
-      ${VENDOR_WEBKIT_DIR}/include/bmalloc
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-      ${WEBKIT_LIB_DIR}/libJavaScriptCore.a
-      ${VENDOR_WEBKIT_DIR}/lib/
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-      ${WEBKIT_LIB_DIR}/libWTF.a
-      ${VENDOR_WEBKIT_DIR}/lib/
+      ${WEBKIT_BUILD_DIR}/JavaScriptCore.framework/PrivateHeaders/*h
+      ${VENDOR_WEBKIT_DIR}/include/JavaScriptCore
   )
 else()
-  message(FATAL_ERROR "Systems other than Apple are not supported yet")
+  message(FATAL_ERROR "Platforms other than Apple are not supported yet")
 endif(APPLE)
